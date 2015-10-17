@@ -2,11 +2,11 @@
 
 ### Create tools folder and install Dependencies 
 
-Note, please replace "WWW/tools" with where ever you store your web tools.
+Note, please replace "~/Sites" with where ever you store your web tools.
 
 ```
-$ mkdir ~/WWW/tools
-$ cd ~/WWW/tools
+$ mkdir ~/Sites
+$ cd ~/Sites
 $ git clone https://github.com/phacility/phabricator.git
 $ git clone https://github.com/phacility/libphutil.git
 $ git clone https://github.com/phacility/arcanist.git
@@ -15,7 +15,7 @@ $ git clone https://github.com/phacility/arcanist.git
 
  1. Open your ~/.profile or ~/.bashrc or whatever you use
    1. Add the following line
-   1. `export PATH="$HOME/WWW/tools/arcanist/bin:$PATH"` 
+   1. `export PATH="$HOME/Sites/arcanist/bin:$PATH"` 
    1. Save the file 
  1. Back in the terminal 
    1. Reload your profile/bashrc `source ~/.profile`
@@ -30,13 +30,13 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
      ```
      <VirtualHost *>
           # Change this to the domain which points to your host.
-          ServerName phabricator.local.nfl.com   
+          ServerName phabricator.local.example.com   
 
           # Change this to the path where you put 'phabricator' when you checked it
           # out from GitHub when following the Installation Guide.
           #
           # Make sure you include "/webroot" at the end!
-          DocumentRoot /Users/christian.harden/WWW/tools/phabricator/webroot  
+          DocumentRoot /Users/<your-user-name-here>/Sites/phabricator/webroot  
 
           RewriteEngine on
           RewriteRule ^/rsrc/(.*)     -                       [L,QSA]
@@ -48,8 +48,8 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
 
 
 
-     ## Allow access to the entire WWW directory
-     <Directory "/Users/christian.harden/WWW">
+     ## Allow access to the entire Sites directory
+     <Directory "/Users/<your-user-name-here>/Sites">
           Options Indexes MultiViews FollowSymLinks
           AllowOverride All
           Order allow,deny
@@ -65,7 +65,7 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
    1. Add the following
 
      ```
-       127.0.0.1  phabricator.local.nfl.com
+       127.0.0.1  phabricator.local.example.com
      ```
  4. Restart apache `$ sudo apachectl -k restart`
 
@@ -73,13 +73,13 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
 
 ### Finish Phabricator Setup
 
- 1. Point your browser to [phabricator.local.nfl.com](http://phabricator.local.nfl.com)
+ 1. Point your browser to [phabricator.local.example.com](http://phabricator.local.example.com)
  2. If you see errors connecting to MySQL, then:
    1. Make sure you have mysql `brew install mysql` and follow these directions http://stackoverflow.com/a/6378429/527096
    2. Update Phabricator mysql.config with correct root, user, and pass
       ```
-      $ cd ~/WWW/tools/phabricator
-      $ ./bin/config set mysql.host local.nfl.com
+      $ cd ~/Sites/phabricator
+      $ ./bin/config set mysql.host local.example.com
       $ ./bin/config set mysql.user root
       $ ./bin/config set mysql.pass ""
       ```
