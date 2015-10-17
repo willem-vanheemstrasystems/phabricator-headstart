@@ -52,8 +52,7 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
      <Directory "/Users/<your-user-name-here>/Sites">
           Options Indexes MultiViews FollowSymLinks
           AllowOverride All
-          Order allow,deny
-          Allow from all
+          Require all granted
      </Directory>
 
 
@@ -62,6 +61,17 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
      ServerName localhost
      ```
    2. NOTE: If you get a warning "Invalid command 'RewriteEngine', perhaps misspelled or defined by a module not included in the server configuration", make sure that you have the following module enabled in your httpd.conf file: LoadModule rewrite_module libexec/apache2/mod_rewrite.so 
+   3. NOTE: For Apache 2.4 and in all *.conf files (e.g. httpd-vhosts.conf, http.conf, httpd-autoindex.conf ..etc) use
+     ```
+     Require all granted
+     ```
+   instead of
+     ```
+     Order allow,deny
+     Allow from all
+     ```
+     The Order and Allow directives are deprecated in Apache 2.4.
+     
  3. Edit your hosts file `$ sublime /private/etc/hosts` 
    1. Add the following
 
