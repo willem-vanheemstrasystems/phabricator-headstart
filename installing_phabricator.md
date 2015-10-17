@@ -1,6 +1,6 @@
 # OSX Phabricator Installation Guide
 
-### Create tools foloder and install Dependencies 
+### Create tools folder and install Dependencies 
 
 Note, please replace "WWW/tools" with where ever you store your web tools.
 
