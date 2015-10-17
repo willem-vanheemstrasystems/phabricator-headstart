@@ -61,6 +61,7 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
 
      ServerName localhost
      ```
+   2. NOTE: If you get a warning "Invalid command 'RewriteEngine', perhaps misspelled or defined by a module not included in the server configuration", make sure that you have the following module enabled in your httpd.conf file: LoadModule rewrite_module libexec/apache2/mod_rewrite.so 
  3. Edit your hosts file `$ sublime /private/etc/hosts` 
    1. Add the following
 
