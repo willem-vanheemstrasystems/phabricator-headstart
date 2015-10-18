@@ -26,7 +26,7 @@ $ git clone https://github.com/phacility/arcanist.git
 First, update the httpd.conf file and hosts file to let Apache find your Phabricator installation.
 
  1. Edit httpd.conf `$ sublime private/etc/apache2/httpd.conf`
-   1. Add the following rule, changing the `DocumentRoot` to match location of your Phabricator repo (remember to replace <your-user-name-here> with the name of the user under which profile you install, e.g. johndoe)
+   1. Add the following rule, changing the `DocumentRoot` to match location of your Phabricator repo (remember to replace \<your-user-name-here\> with the name of the user under which profile you install, e.g. johndoe)
      ```
      ## Allow access to the entire Sites directory
      <Directory "/Users/<your-user-name-here>/Sites">
