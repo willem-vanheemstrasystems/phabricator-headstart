@@ -113,7 +113,9 @@ php -v
 # Download PHP source
 wget -O php-5.4.30.tar.gz http://php.net/get/php-5.4.30.tar.gz/from/this/mirror
 # Deflate source 
-tar -zxvf php-5.4.30.tar.gz 
+tar -zxvf php-5.4.30.tar.gz
+# Install autoconf if not already installed
+brew install autoconf
 # Make + install pcntl 
 cd php-5.4.30/ext/pcntl/
 phpize && ./configure && make install
