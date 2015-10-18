@@ -105,6 +105,9 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
      1. Follow the provided link 'Configuring File Storage'
      2. For each php.ini (in /usr/local/etc/php/\<version\>), set post_max_size to 32M
      3. For each php.ini (in /usr/local/etc/php/\<version\>), set upload_max_filesize to 32M
+     
+   4. Other Setup Issues: PHP Extension 'APC' Not Installed
+     1. more ... 
 
 ### Installing `pcntl`
 
