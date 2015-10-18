@@ -97,6 +97,10 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
       Correct the section [mysqld] inside /etc/my.cnf from 1M (=1048576) to 32M (=33554432)
       
       max_allowed_packet = 32M
+   2. Server Timezone Not Configured
+     1. Click on the hyperlinked text of the warning, then click on 'Edit phabricator.timezone'
+     2. Enter the required timezone (e.g. Europe/London) in the input field and confirm with 'Save Config Entry'
+
 
 ### Installing `pcntl`
 
