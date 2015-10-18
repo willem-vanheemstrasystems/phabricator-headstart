@@ -126,7 +126,7 @@ phpize && ./configure && make install
 # Copy the install into your php extensions directory 
 sudo cp modules/pcntl.so /usr/lib/php/extensions/
 # Update php.ini with new extension
-# For each php.ini in /usr/local/etc/php/\<version\>
+# For each php.ini in /usr/local/etc/php/<version>
 # Add below line to the php.ini
 extension=/usr/lib/php/extensions/pcntl.so
 # Restart and test
