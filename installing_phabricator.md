@@ -91,6 +91,7 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
  3. If you see
    1. Important Setup Issues
      1. Base URI Not Configured: Follow the hyperlinked text of the warning and run the command shown.
+     2. Phabricator Daemons Are Not Running: Follow the hyperlinked text of the warning and run the command shown.
 
  4. If you see 
    1. MySQL Setup Issues	
