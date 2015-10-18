@@ -103,8 +103,8 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
      
    3. Other Setup Issues: Large File Storage Not Configured
      1. Follow the provided link 'Configuring File Storage'
-     2. For each php.ini (in /usr/local/etc/php/<version>), set post_max_size to 32M
-     3. For each php.ini (in /usr/local/etc/php/<version>), set upload_max_filesize to 32M
+     2. For each php.ini (in /usr/local/etc/php/\<version\>), set post_max_size to 32M
+     3. For each php.ini (in /usr/local/etc/php/\<version\>), set upload_max_filesize to 32M
 
 ### Installing `pcntl`
 
@@ -126,7 +126,7 @@ phpize && ./configure && make install
 # Copy the install into your php extensions directory 
 sudo cp modules/pcntl.so /usr/lib/php/extensions/
 # Update php.ini with new extension
-# For each php.ini in /usr/local/etc/php/<version>
+# For each php.ini in /usr/local/etc/php/\<version\>
 # Add below line to the php.ini
 extension=/usr/lib/php/extensions/pcntl.so
 # Restart and test
