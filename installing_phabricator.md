@@ -88,8 +88,8 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
       ```
    3. Refresh in your browser and continue following instructions
 
-3. If you see 
-   1.MySQL Setup Issues	
+ 3. If you see 
+   1. MySQL Setup Issues	
      1. Small MySQL "max_allowed_packet"
       ```
       MySQL is configured with a small 'max_allowed_packet' (1048576), which may cause some large writes to fail. Strongly   consider raising this to at least 33554432 in your MySQL configuration.
