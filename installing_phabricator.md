@@ -26,12 +26,18 @@ $ git clone https://github.com/phacility/arcanist.git
 First, update the httpd.conf file and hosts file to let Apache find your Phabricator installation.
 
  1. Edit httpd.conf `$ sublime private/etc/apache2/httpd.conf`
-   1. Add the following rule, changing the `DocumentRoot` to match location of your Phabricator repo
+   1. Add the following rule, changing the `DocumentRoot` to match location of your Phabricator repo (remember to replace <your-user-name-here> with the name of the user under which profile you install, e.g. johndoe)
      ```
-     <VirtualHost *>
+     ## Allow access to the entire Sites directory
+     <Directory "/Users/<your-user-name-here>/Sites">
+          Options Indexes MultiViews FollowSymLinks
+          AllowOverride All
+          Require all granted
+     </Directory>
+     <VirtualHost *:80>
           # Change this to the domain which points to your host.
-          ServerName phabricator.local.example.com   
-
+          ServerName "phabricator.local.example.com"   
+          ServerAlias "www.phabricator.local.example.com"
           # Change this to the path where you put 'phabricator' when you checked it
           # out from GitHub when following the Installation Guide.
           #
@@ -43,20 +49,6 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
           RewriteRule ^/favicon.ico   -                       [L,QSA]
           RewriteRule ^(.*)$          /index.php?__path__=$1  [B,L,QSA]
      </VirtualHost>
-
-
-
-
-
-     ## Allow access to the entire Sites directory
-     <Directory "/Users/<your-user-name-here>/Sites">
-          Options Indexes MultiViews FollowSymLinks
-          AllowOverride All
-          Require all granted
-     </Directory>
-
-
-
 
      ServerName localhost
      ```
