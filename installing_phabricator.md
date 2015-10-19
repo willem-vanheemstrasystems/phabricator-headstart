@@ -114,6 +114,12 @@ locate my.cnf
      2. MySQL is Using Default Stopword File
       You can choose to ignore this warning.
       
+     3. MySQL is Using Default Minimum Word Length
+      
+      Correct the section [mysqld] inside /etc/my.cnf from ft_min_word_len = 4 to ft_min_word_len = 3
+      
+      ft_min_word_len = 3
+      
    2. Other Setup Issues: Server Timezone Not Configured
      1. Click on the hyperlinked text of the warning, then click on 'Edit phabricator.timezone'
      2. Enter the required timezone (e.g. Europe/London) in the input field and confirm with 'Save Config Entry'
