@@ -101,6 +101,7 @@ sudo /usr/libexec/locate.updatedb
 # wait a few minutes for it to finish
 locate my.cnf
       ```
+   It may be worth creating a file ~/.my.cnf with all requirements of Phabricator (e.g. max_allowed_packet = 32M). This file will overwrite all other MySQL / MariaDB configuration files, as it is local to the user.
       
      1. Small MySQL "max_allowed_packet"
       ```
