@@ -111,6 +111,8 @@ locate my.cnf
       
       max_allowed_packet = 32M
       
+      Finally, restart MySQL (mysql.server restart)
+      
      2. MySQL is Using Default Stopword File
      
       You can choose to ignore this warning.
@@ -121,10 +123,19 @@ locate my.cnf
       
       ft_min_word_len = 3
       
-      Finally, restart MySQL and run this command to rebuild indexes using the new rules:
+      Finally, restart MySQL (mysql.server restart) and run this command to rebuild indexes using the new rules:
       ```
       mysql> REPAIR TABLE phabricator_search.search_documentfield;
       ```
+      If permissions are denied, try instead running above query by use of the application Sequel Pro (with user 'root' and host '127.0.0.1').
+      
+     4. MySQL is Using the Default Boolean Syntax
+      
+      Correct the section [mysqld] inside /etc/my.cnf from ft_boolean_syntax	= "+ -><()~*:\"\"&|" to ft_boolean_syntax=' |-><()~*:""&^'
+      
+      ft_boolean_syntax=' |-><()~*:""&^'
+      
+      Finally, restart MySQL (mysql.server restart)
       
    2. Other Setup Issues: Server Timezone Not Configured
      1. Click on the hyperlinked text of the warning, then click on 'Edit phabricator.timezone'
