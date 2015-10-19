@@ -139,9 +139,9 @@ locate my.cnf
       
      5. MySQL May Run Slowly
       
-      Correct the section [mysqld] inside /etc/my.cnf from innodb_buffer_pool_size	= 134217728 (=128MB) to innodb_buffer_pool_size	= 160MB
+      Correct the section [mysqld] inside /etc/my.cnf from innodb_buffer_pool_size	= 134217728 (=128MB) to innodb_buffer_pool_size	= 1600M
       
-      innodb_buffer_pool_size	= 160MB
+      innodb_buffer_pool_size	= 1600M
       
       Finally, restart MySQL (mysql.server restart)
       
