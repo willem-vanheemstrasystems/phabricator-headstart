@@ -119,6 +119,11 @@ locate my.cnf
       Correct the section [mysqld] inside /etc/my.cnf from ft_min_word_len = 4 to ft_min_word_len = 3
       
       ft_min_word_len = 3
+     
+      Finally, restart MySQL and run this command to rebuild indexes using the new rules:
+      ```
+      mysql> REPAIR TABLE phabricator_search.search_documentfield;
+      ```
       
    2. Other Setup Issues: Server Timezone Not Configured
      1. Click on the hyperlinked text of the warning, then click on 'Edit phabricator.timezone'
