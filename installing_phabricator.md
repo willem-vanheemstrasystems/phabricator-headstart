@@ -137,6 +137,14 @@ locate my.cnf
       
       Finally, restart MySQL (mysql.server restart)
       
+     5. MySQL May Run Slowly
+      
+      Correct the section [mysqld] inside /etc/my.cnf from innodb_buffer_pool_size	= 134217728 (=128MB) to innodb_buffer_pool_size	= 160MB
+      
+      innodb_buffer_pool_size	= 160MB
+      
+      Finally, restart MySQL (mysql.server restart)
+      
    2. Other Setup Issues: Server Timezone Not Configured
      1. Click on the hyperlinked text of the warning, then click on 'Edit phabricator.timezone'
      2. Enter the required timezone (e.g. Europe/London) in the input field and confirm with 'Save Config Entry'
