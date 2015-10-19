@@ -112,6 +112,7 @@ locate my.cnf
       max_allowed_packet = 32M
       
      2. MySQL is Using Default Stopword File
+     
       You can choose to ignore this warning.
       
      3. MySQL is Using Default Minimum Word Length
@@ -119,7 +120,7 @@ locate my.cnf
       Correct the section [mysqld] inside /etc/my.cnf from ft_min_word_len = 4 to ft_min_word_len = 3
       
       ft_min_word_len = 3
-     
+      
       Finally, restart MySQL and run this command to rebuild indexes using the new rules:
       ```
       mysql> REPAIR TABLE phabricator_search.search_documentfield;
