@@ -94,7 +94,7 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
      2. Phabricator Daemons Are Not Running: Follow the hyperlinked text of the warning and run the command shown.
 
  4. If you see 
-   1. MySQL Setup Issues	
+   1. MySQL Setup Issues: Note, if you have installed MariaDB, look for https://mariadb.com/kb/en/mariadb/configuring-mariadb-with-mycnf/	
      1. Small MySQL "max_allowed_packet"
       ```
       MySQL is configured with a small 'max_allowed_packet' (1048576), which may cause some large writes to fail. Strongly   consider raising this to at least 33554432 in your MySQL configuration.
