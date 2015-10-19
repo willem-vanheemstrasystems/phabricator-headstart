@@ -95,6 +95,13 @@ First, update the httpd.conf file and hosts file to let Apache find your Phabric
 
  4. If you see 
    1. MySQL Setup Issues: Note, if you have installed MariaDB, look for https://mariadb.com/kb/en/mariadb/configuring-mariadb-with-mycnf/	
+   One way to find out where your mysql configuration file is (my.cnf) is to execute the following command:
+      ```
+sudo /usr/libexec/locate.updatedb
+# wait a few minutes for it to finish
+locate my.cnf
+      ```
+      
      1. Small MySQL "max_allowed_packet"
       ```
       MySQL is configured with a small 'max_allowed_packet' (1048576), which may cause some large writes to fail. Strongly   consider raising this to at least 33554432 in your MySQL configuration.
